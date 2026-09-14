@@ -27,8 +27,8 @@ jobs:
       - name: Deploy over SSH
         shell: bash
         env:
-          SSH_USER: barrycumbie #${{ secrets.SSH_USER }}
-          SSH_HOST: 8.234.41.172 #${{ secrets.SSH_HOST }}
+          SSH_USER: carsonkerr #${{ secrets.SSH_USER }}
+          SSH_HOST: 136.83.21.247 #${{ secrets.SSH_HOST }}
           APP_DIR:  app/server # ${{ vars.APP_DIR }}
           PM2_NAME: app # ${{ vars.PM2_NAME }}
         run: |
