@@ -1,5 +1,5 @@
 # fullstack-brain-bucket
-
+This app is made to keep track of ideas.
 ### authorship + version
 
 `@carsonkerr` \| `2026-09-14` \| `GOLF`
@@ -32,7 +32,7 @@ https://github.com/barrycumbie/charlie-brain-bucket
 
 ### narrative
 
-In 2--4 sentences, briefly describe your GOLF infrastructure and what you built/deployed.
+This repo builds a CI/CD pipeline for an idea-tracking web app. It deploys automatically from GitHub to a Render DEV environment from the dev branch, and to a GCP PROD environment via GitHub Actions.
 
 ### architecture
 
