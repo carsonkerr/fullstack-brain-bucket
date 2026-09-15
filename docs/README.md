@@ -2,7 +2,7 @@
 
 ### authorship + version
 
-carsonkerr \| 2026-09-14 \| GOLF
+`@carsonkerr` \| `2026-09-14` \| `GOLF`
 
 ### attribution
 
@@ -98,6 +98,6 @@ GitHub
 
 ### GCP
 
-external IP: '136.83.21.247'\
-Linux user: 'carson_kerr04'\
+external IP: `136.83.21.247`\
+Linux user: `carson_kerr04`\
 instructor SSH public key installed: `yes`
