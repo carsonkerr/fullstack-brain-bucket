@@ -21,7 +21,7 @@ https://github.com/barrycumbie/charlie-brain-bucket
 | published docs               | [GitHub Pages](https://carsonkerr.github.io/fullstack-brain-bucket/)                                                            |
 | CI/CD workflow               | [`deploy.yml`](https://github.com/carsonkerr/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml)         |
 | successful PROD deployment   | [GitHub Action](https://github.com/carsonkerr/fullstack-brain-bucket/actions/runs/34920008727/job/104229661858)                 |
-| resolved GOLF issue          | [issue #](URL)                                                                                                                   |
+| resolved GOLF issue          | [issue #](https://github.com/carsonkerr/fullstack-brain-bucket/issues/1)                                                                                                                   |
 
 ### user story
 
