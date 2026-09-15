@@ -2,7 +2,7 @@
 
 ### authorship + version
 
-'carsonkerr' \| '2026-09-14' \| 'GOLF'
+carsonkerr \| 2026-09-14 \| GOLF
 
 ### attribution
 
@@ -11,17 +11,17 @@ https://github.com/barrycumbie/charlie-brain-bucket
 
 ### deployments, codebase, & repo features 
 
-  resource                     link
-  ---------------------------- ----------------------
-  PROD codebase                [`main`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main)
-  PROD server                  [GCP](https://carson.barrycumbie.com/)
-  DEV codebase                 [`dev`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/dev)
-  DEV server                   [Render](https://carson-fullstack-brain-bucket.onrender.com/)
-  docs                         [`docs/`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main/docs)
-  published docs               [GitHub Pages](https://carsonkerr.github.io/fullstack-brain-bucket/)
-  CI/CD workflow               [`deploy.yml`](https://github.com/carsonkerr/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml)
-  successful PROD deployment   [GitHub Action](https://github.com/carsonkerr/fullstack-brain-bucket/actions/runs/34920008727/job/104229661858)
-  resolved GOLF issue          [issue \#](URL)
+ | Resource                   | Link                                                                                                                            |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| PROD codebase                | [`main`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main)                                                        |
+| PROD server                  | [GCP](https://carson.barrycumbie.com/)                                                                                          |
+| DEV codebase                 | [`dev`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/dev)                                                          |
+| DEV server                   | [Render](https://carson-fullstack-brain-bucket.onrender.com/)                                                                   |
+| docs                         | [`docs/`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main/docs)                                                  |
+| published docs               | [GitHub Pages](https://carsonkerr.github.io/fullstack-brain-bucket/)                                                            |
+| CI/CD workflow               | [`deploy.yml`](https://github.com/carsonkerr/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml)         |
+| successful PROD deployment   | [GitHub Action](https://github.com/carsonkerr/fullstack-brain-bucket/actions/runs/34920008727/job/104229661858)                 |
+| resolved GOLF issue          | [issue #](URL)                                                                                                                   |
 
 ### user story
 
@@ -94,7 +94,7 @@ GitHub
         app.js
         package-lock.json
         package.json
-'''
+```
 
 ### GCP
 
