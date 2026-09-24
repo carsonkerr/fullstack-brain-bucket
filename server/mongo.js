@@ -10,7 +10,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
-const uri = process.env.MONGO_URI;  
+const uri = process.env.MONGO_URI;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -22,6 +22,7 @@ const client = new MongoClient(uri, {
 });
 
 app.use(express.static(join(__dirname, '../public')));
+app.use( express.json());
 
 app.get('/', (req, res) => {
   res.sendFile(join(__dirname, '../public', 'hotel.html'));
@@ -30,6 +31,24 @@ app.get('/', (req, res) => {
 app.get('/', (req, res) => {
   res.send('Hello World')
 })
+
+app.post(
+  '/api/students',
+  function (req, res) {
+
+    console.log(
+      req.body
+    );
+
+    res.json({
+
+      received:
+        req.body
+
+    });
+
+  }
+);
 
 async function run() {
   try {
@@ -48,11 +67,11 @@ run().catch(console.dir);
 
 app.get(
   '/api/hello',
-  function(req, res) {
+  function (req, res) {
 
     const message = {
-        message: "hello from hard code json",
-        success: "true",
+      message: "hello from hard code json",
+      success: "true",
     };
 
     res.json(
