@@ -3,9 +3,14 @@ import 'dotenv/config';
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import express from 'express'
+
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const app = express();
 const uri = process.env.MONGO_URI;  
-
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -15,6 +20,16 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   }
 });
+
+app.use(express.static(join(__dirname, '../public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, '../public', 'hotel.html'));
+})
+
+app.get('/', (req, res) => {
+  res.send('Hello World')
+})
 
 async function run() {
   try {
