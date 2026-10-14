@@ -1,5 +1,5 @@
-# Job Tracker
-> track job applications from applied to offer
+# Fullstack Brain Bucket | Job Tracker
+> track job applications and their status.
 
 `@carsonkerr` | `2026-10-13` | `HOTEL`
 
