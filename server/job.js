@@ -77,7 +77,7 @@ app.get('/api/jobs/:id', async (req, res) => {
 });
 
 // UPDATE
-app.put('/api/jobs/:id', async (req, res) => {
+app.patch('/api/jobs/:id', async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ error: 'invalid id' });
   }

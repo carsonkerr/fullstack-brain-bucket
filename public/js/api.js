@@ -17,7 +17,7 @@ async function apiCreateJob(job) {
 
 async function apiUpdateJob(id, job) {
   const response = await fetch(`/api/jobs/${id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(job),
   });
