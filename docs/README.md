@@ -1,99 +1,75 @@
-# fullstack-brain-bucket
-This app is made to keep track of ideas.
-### authorship + version
+# Fullstack Brain Bucket | Job Tracker
+> track job applications and their status.
 
-`@carsonkerr` \| `2026-09-14` \| `GOLF`
+`@carsonkerr` | `2026-10-13` | `HOTEL`
 
-### attribution
+## deployments + codebase
 
-The frontend portion of this project is not mine and comes from Dr. Cumbie:
-https://github.com/barrycumbie/charlie-brain-bucket
+| resource | link |
+|---|---|
+| `main` | [code](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main) |
+| PROD | [GCP](https://carson.barrycumbie.com/) |
+| `dev` | [code](https://github.com/carsonkerr/fullstack-brain-bucket/tree/dev) |
+| DEV | [Render](https://carson-fullstack-brain-bucket.onrender.com/) |
+| docs | [`docs/`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main/docs) |
+| CI/CD workflow | [`re-deploy-main-to-gcp.yml`](https://github.com/carsonkerr/fullstack-brain-bucket/blob/main/.github/workflows/re-deploy-main-to-gcp.yml) |
+| successful PROD deployment | [GitHub Action](https://github.com/carsonkerr/fullstack-brain-bucket/actions/runs/38512935546) |
 
-### deployments, codebase, & repo features 
+## HOTEL grading dashboard
 
- | Resource                   | Link                                                                                                                            |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| PROD codebase                | [`main`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main)                                                        |
-| PROD server                  | [GCP](https://carson.barrycumbie.com/)                                                                                          |
-| DEV codebase                 | [`dev`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/dev)                                                          |
-| DEV server                   | [Render](https://carson-fullstack-brain-bucket.onrender.com/)                                                                   |
-| docs                         | [`docs/`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/main/docs)                                                  |
-| published docs               | [GitHub Pages](https://carsonkerr.github.io/fullstack-brain-bucket/)                                                            |
-| CI/CD workflow               | [`deploy.yml`](https://github.com/carsonkerr/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml)         |
-| successful PROD deployment   | [GitHub Action](https://github.com/carsonkerr/fullstack-brain-bucket/actions/runs/34920008727/job/104229661858)                 |
-| resolved GOLF issue          | [issue #001](https://github.com/carsonkerr/fullstack-brain-bucket/issues/1)                                                                                                                   |
+| requirement | evidence |
+|---|---|
+| MongoDB connection | [server code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L16-L24) |
+| GET all | [endpoint code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L55-L65) |
+| GET one | [endpoint code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L67-L77) |
+| filtered GET (`?search=`) | [endpoint code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L55-L65) |
+| POST / create | [endpoint code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L44-L53) |
+| PATCH / update | [endpoint code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L79-L96) |
+| DELETE | [endpoint code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/server/job.js#L118-L128) |
+| frontend `fetch()` | [client code](https://github.com/carsonkerr/fullstack-brain-bucket/blob/fd6e6f7d8e514f0efd3573e1f336fdf841f6fe3e/public/js/api.js#L3-L38) |
+| persistent CRUD | [PROD app](https://carson.barrycumbie.com/) |
+| HOTEL milestone | [milestone](https://github.com/carsonkerr/fullstack-brain-bucket/milestone/1) |
+| example issue | [issue #9](https://github.com/carsonkerr/fullstack-brain-bucket/issues/9) |
+| development branch | [`hotel/patch-update-job`](https://github.com/carsonkerr/fullstack-brain-bucket/tree/hotel/patch-update-job) |
+| feature → dev | [PR #10](https://github.com/carsonkerr/fullstack-brain-bucket/pull/10) |
+| dev → main | [PR #11](https://github.com/carsonkerr/fullstack-brain-bucket/pull/11) |
+| PROD deployment | [GitHub Action](https://github.com/carsonkerr/fullstack-brain-bucket/actions/runs/38512935546) |
 
-### user story
+## architecture
 
-- **As a** burgeoning full-stack developer,
-- **I want** a CI/CD infrastructure
-- **so that** I can develop locally, manage my code in GitHub, and
-    automatically deploy changes to DEV and PROD environments.
+```text
+client → fetch() → Express REST API → MongoDB Atlas
+```
 
-### narrative
-
-This repo builds a CI/CD pipeline for an idea-tracking web app. It deploys automatically from GitHub to a Render DEV environment from the dev branch, and to a GCP PROD environment via GitHub Actions.
-
-### architecture
-
-``` text
-LOCAL
-  │
-  ▼
-GitHub
-  │
-  ├── dev  ──► Render ─────────► DEV
-  │
-  └── main ──► GitHub Actions ─► GCP ──► PROD
+```text
+feature → PR → dev → PR → main → GitHub Actions → GCP
 ```
 
 ### stack
 
-`HTML/CSS/JS` \| `Node.js` \| `Express` \| `Git/GitHub` \| `Render` \|
-`GCP` \| `Linux` \| `Nginx` \| `PM2` \| `Certbot` \| `GitHub Actions`
+`HTML/CSS/JS` | `Node.js` | `Express` | `REST` | `MongoDB` | `Atlas` | `Git/GitHub` | `Render` | `GCP` | `Nginx` | `PM2` | `GitHub Actions`
 
 ### project structure
 
-``` text
-│   .gitignore
-│
-├───.github
-│   └───workflows
-│           deploy-main-to-gcp.yml
-├───docs
-│       README.md
-├───public
-│   │   index.html
-│   ├───assets
-│   │   ├───css
-│   │   │       style.css
-│   │   │
-│   │   ├───data
-│   │   │       ideas.json
-│   │   │
-│   │   └───js
-│   │           admin.js
-│   │           auth-guard.js
-│   │           auth.js
-│   │           content.js
-│   │           form.js
-│   │           main.js
-│   ├───config
-│   │       AGENTS.md
-│   │       CHARLIE.md
-│   │       CLAUDE.md
-│   ├───docs
-│   │       sample-content-records.json
-│   │       session-2026-06-09-prompts-and-overview.md
-│   └───pages
-│           admin.html
-│           auth.html
-│           content.html
-│           form.html
-└───server
-        app.js
-        package-lock.json
-        package.json
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── re-deploy-main-to-gcp.yml
+├── docs/
+│   └── README.md
+├── public/
+│   ├── index.html
+│   └── js/
+│       ├── api.js
+│       ├── main.js
+│       └── ui.js
+├── server/
+│   ├── job.js
+│   ├── package.json
+│   └── package-lock.json
+├── .gitignore
+└── package-lock.json
 ```
 
 ### GCP
